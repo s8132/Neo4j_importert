@@ -1,0 +1,21 @@
+<br/>
+<br/>
+<div class="jumbotron">
+    <h1>Welcome in neo4j importer</h1>
+    <p>Import from csv to neo4j</p>
+    <h2>Example</h2>
+    <div class="row">
+        <div class="col-xs-4">
+            <h3>CSV <i class="pull-right glyphicon glyphicon-arrow-right"></i> </h3>
+            <div hljs include="'exampleFile/example.csv'"></div>
+        </div>
+        <div class="col-xs-4">
+            <h3>JSON <i class="pull-right glyphicon glyphicon-arrow-right"></i></h3>
+            <div hljs include="'exampleFile/example.json'"></div>
+        </div>
+        <div class="col-xs-4">
+            <h3>Cypher</h3>
+            <div hljs source="'create (n {name: ${name}, age: ${age}}) return n.name as name'"></div>
+        </div>
+    </div>
+</div>

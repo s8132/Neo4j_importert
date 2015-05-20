@@ -1,0 +1,20 @@
+<h2 class="page-header">Settings</h2>
+<form name="settingsForm" ng-submit="saveSettings()">
+    <div class="form-group" ng-class="{'has-error': settingsForm.dbURL.$invalid}">
+        <label for="dbUrl">URL</label>
+        <input type="text" class="form-control" name="dbURL" id="dbUrl" placeholder="Enter database url" ng-model="db.url" required>
+    </div>
+    <div class="form-group" ng-class="{'has-error': settingsForm.dbPort.$invalid}">
+        <label for="dbPort">Port</label>
+        <input type="number" class="form-control" name="dbPort" id="dbPort" placeholder="Enter database port" min="0" ng-model="db.port" required>
+    </div>
+    <div class="form-group" ng-class="{'has-error': settingsForm.dbUser.$invalid}">
+        <label for="dbUser">User</label>
+        <input type="text" class="form-control" name="dbUser" id="dbUser" placeholder="Enter database user" ng-model="db.user" required>
+    </div>
+    <div class="form-group" ng-class="{'has-error': settingsForm.dbPassword.$invalid}">
+        <label for="dbPassword">Password</label>
+        <input type="password" class="form-control" name="dbPassword" id="dbPassword" placeholder="Enter database password" ng-model="db.password" required>
+    </div>
+    <button type="submit" class="btn btn-success pull-right" ng-disabled="settingsForm.$invalid">Save</button>
+</form>

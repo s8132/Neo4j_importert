@@ -1,0 +1,77 @@
+/* app css stylesheet */
+
+.menu {
+  list-style: none;
+  border-bottom: 0.1em solid black;
+  margin-bottom: 2em;
+  padding: 0 0 0.5em;
+}
+
+.menu:before {
+  content: "[";
+}
+
+.menu:after {
+  content: "]";
+}
+
+.menu > li {
+  display: inline;
+}
+
+.menu > li:before {
+  content: "|";
+  padding-right: 0.3em;
+}
+
+.menu > li:nth-child(1):before {
+  content: "";
+  padding: 0;
+}
+#overlay {
+     position: absolute;
+     left: 0;
+     top: 0;
+     bottom: 0;
+     right: 0;
+     background: #000;
+     opacity: 0.8;
+     filter: alpha(opacity=80);
+    z-index: 9999;
+ }
+#overlay.hide{display: none;}
+#loading {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -100px 0 0 -100px;
+    z-index: 999999;
+}
+
+#overlay-progress {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    background: #000;
+    opacity: 0.8;
+    filter: alpha(opacity=80);
+    z-index: 9999;
+}
+#overlay-progress.hide{display: none;}
+#loading-progress {
+    width: 50%;
+    height: 200px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -100px 0 0 -25%;
+    z-index: 999999;
+}
+.progress-bar{
+    color: #000000;
+    font-weight: bold;
+}

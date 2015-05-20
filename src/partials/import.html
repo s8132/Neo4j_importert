@@ -1,0 +1,30 @@
+<div class="row">
+    <div class="col-xs-6">
+        <h2 class="page-header">Import</h2>
+    </div>
+    <div class="col-xs-6">
+        <br/>
+        <br/>
+        <form name="fileForm">
+            <div class="input-group" ng-class="{'has-error': fileForm.delimiter.$invalid}">
+                <span class="input-group-addon" id="sizing-addon1">Delimiter</span>
+                <input type="text" class="form-control" name="delimiter" required ng-minlength="1" ng-maxlength="1" ng-model="delimiter">
+        <span class="input-group-btn">
+            <a class="btn btn-primary" ng-click="selectFile()" ng-disabled="fileForm.delimiter.$invalid">Select CSV file</a>
+        </span>
+            </div>
+        </form>
+    </div>
+</div>
+<!--ng-if="showImporter"-->
+<div class="row" ng-if="showImporter">
+    <div class="col-xs-6">
+        <pre>{{jsonToImport | json}}</pre>
+    </div>
+    <div class="col-xs-6">
+        <label for="cypherCmd">Cypher</label>
+        <textarea class="form-control" rows="3" id="cypherCmd" ng-model="cypherCmd"></textarea>
+        <br/>
+        <a class="btn btn-success btn-block" ng-click="execute(cypherCmd)">Execute</a>
+    </div>
+</div>
