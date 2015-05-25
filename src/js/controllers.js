@@ -127,7 +127,8 @@ controllerApp.controller('ImportCtrl', ['$scope', 'LoadingView', '$state', 'loca
         $scope.jsonToImport.forEach(function(obj){
             var query = cypherCmd;
             Object.keys(obj).forEach(function(key){
-                query = query.replace("${"+key+"}", ((typeof obj[key])==='string') ? "'" + obj[key] + "'" : obj[key]);
+                //query = query.replace("${"+key+"}", ((typeof obj[key])==='string') ? "'" + addslashes(obj[key]) + "'" : addslashes(obj[key]));
+                query = query.replace("${"+key+"}", "'" + addslashes(obj[key]) + "'" );
             });
             queries.push(query);
         });
@@ -155,6 +156,10 @@ controllerApp.controller('ImportCtrl', ['$scope', 'LoadingView', '$state', 'loca
 
     };
 
+
+    function addslashes( str ) {
+        return (str + '').replace(/[\\"']/g, '\\$&').replace(/\u0000/g, '\\0');
+    }
 }]);
 
 
